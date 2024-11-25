@@ -2,7 +2,7 @@
 
 import { MoveDownIcon } from "lucide-react";
 import LinkNavigation from "@/components/LinkNavigation";
-import MarqueeDivider, { Direction, Size } from "@/components/MarqueeDivider";
+import MarqueeDivider, { Size } from "@/components/MarqueeDivider";
 import MasonryGrid from "@/components/MasonryGrid";
 
 export default function Hero() {

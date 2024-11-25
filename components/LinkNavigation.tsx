@@ -2,8 +2,7 @@ import Github from "@/public/icons/github.svg";
 import Youtube from "@/public/icons/youtube.svg";
 import LinkedIn from "@/public/icons/linkedin.svg";
 import { MenuIcon } from "lucide-react";
-import React, { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
+import React from "react";
 
 const LinkNavigation = () => {
   return (

@@ -1,5 +1,4 @@
 import React from "react";
-import MarqueeDivider, { Direction, Size } from "./MarqueeDivider";
 
 const Footer = () => {
   return (
@@ -30,7 +29,7 @@ const Footer = () => {
           </a>
         </div>
         <p className="text-xs text-gray-500 mb-[10vh]">
-          "Yaratıcı çözümler, verimli kodlar." - Bedirhan Giden
+          &quot;Yaratıcı çözümler, verimli kodlar.&quot; - Bedirhan Giden
         </p>
       </div>
     </footer>
