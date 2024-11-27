@@ -10,7 +10,7 @@ interface ImageCardProps {
 const ImageCard: React.FC<ImageCardProps> = ({ src, alt, className }) => {
   return (
     <Card className={`overflow-hidden rounded-none ${className} relative`}>
-      <Image src={src} alt={alt} layout="fill" objectFit="cover" />
+      <Image src={src} alt={alt} fill style={{ objectFit: "cover" }} />
     </Card>
   );
 };

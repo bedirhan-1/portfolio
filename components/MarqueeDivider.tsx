@@ -54,13 +54,13 @@ const MarqueeDivider = ({
   return (
     <Marquee
       speed={speed}
-      className={`${backgroundColor} opacity-20 p-2`}
+      className={`${backgroundColor} opacity-40 p-12`}
       direction={direction}
     >
       {new Array(100).fill(title).map((e, index) => (
         <h1
           key={index}
-          className={`mr-12 ${getFontSize()} ${className}`}
+          className={`mr-24 ${getFontSize()} ${className}`}
           style={{ color: textColor }}
         >
           {e}

@@ -32,9 +32,12 @@ const Masonry: React.FC = () => {
       backgroundImage: "/images/teapot.jpg",
     },
     {
-      type: MansoryCardType.IMAGE,
-      image: "/images/woman.jpg",
-      className: "row-span-3 col-span-1",
+      type: MansoryCardType.INFO,
+      title: "Frontend Intern",
+      desc: "A mobile app project built with React Native, designed for cross-platform use.",
+      link: "https://github.com/bedirhan-1/react-native",
+      className: "col-span-1 row-span-3",
+      backgroundImage: "/images/flamingo.jpg",
     },
     {
       type: MansoryCardType.INFO,
@@ -44,13 +47,11 @@ const Masonry: React.FC = () => {
       className: "row-span-1 col-span-2",
       backgroundImage: "/images/cheetah.jpg",
     },
+
     {
-      type: MansoryCardType.INFO,
-      title: "Frontend Intern",
-      desc: "A mobile app project built with React Native, designed for cross-platform use.",
-      link: "https://github.com/bedirhan-1/react-native",
-      className: "col-span-1 row-span-2",
-      backgroundImage: "/images/flamingo.jpg",
+      type: MansoryCardType.IMAGE,
+      image: "/images/woman.jpg",
+      className: "row-span-2 col-span-1",
     },
     {
       type: MansoryCardType.INFO,

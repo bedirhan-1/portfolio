@@ -6,7 +6,7 @@ import React from "react";
 
 const LinkNavigation = () => {
   return (
-    <div className="flex fixed bottom-6 left-1/2 transform -translate-x-1/2 w-64 h-4 p-2 transition-all duration-300 ease-in-out rounded-full items-center justify-center z-50 bg-white hover:w-48 hover:h-10 group">
+    <div className="flex fixed bottom-6 left-1/2 transform -translate-x-1/2 w-64 h-4 p-2 transition-all duration-300 ease-in-out items-center justify-center z-50 bg-white hover:w-48 hover:h-10 group">
       <div className="flex items-center gap-4 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
         <a href="https://github.com/bedirhan-1" target="_blank">
           <Github className="w-6 h-6" style={{ fill: "black" }} />
