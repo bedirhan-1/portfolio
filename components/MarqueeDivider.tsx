@@ -15,58 +15,50 @@ export enum Size {
   sm = "sm",
 }
 
-const MarqueeDivider = ({
-  title = "DEFAULT TITLE",
-  backgroundColor = "bg-gray-200",
-  textColor = "#000",
-  direction = Direction.LEFT,
-  size = Size.lg,
-  speed,
-  className,
-}: {
-  title: string;
+interface MarqueeDividerProps {
+  title?: string;
   backgroundColor?: string;
   textColor?: string;
   direction?: Direction;
   size?: Size;
   className?: string;
   speed?: number;
+}
+
+const fontSizeMap: Record<Size, string> = {
+  [Size.xxxl]: "text-9xl font-extrabold py-14 mr-14",
+  [Size.xxl]: "text-6xl font-extrabold  py-12 mr-12",
+  [Size.xl]: "text-4xl font-extrabold py-10 mr-10",
+  [Size.lg]: "text-2xl font-semibold py-8 mr-8",
+  [Size.md]: "text-xl font-medium py-6 mr-6",
+  [Size.sm]: "text-xs font-medium py-4 mr-4",
+};
+
+const MarqueeDivider: React.FC<MarqueeDividerProps> = ({
+  title = "DEFAULT TITLE",
+  backgroundColor = "bg-gray-200",
+  textColor = "#000",
+  direction = Direction.LEFT,
+  size = Size.lg,
+  speed = 50,
+  className = "",
 }) => {
-  const getFontSize = () => {
-    switch (size) {
-      case Size.sm:
-        return "text-xs font-medium";
-      case Size.md:
-        return "text-xl font-medium p-0 m-0";
-      case Size.lg:
-        return "text-2xl font-semibold";
-      case Size.xl:
-        return "text-4xl font-extrabold";
-      case Size.xxl:
-        return "text-6xl font-extrabold";
-      case Size.xxxl:
-        return "text-9xl font-extrabold p-0 m-0";
-      default:
-        return "text-3xl font-semibold";
-    }
-  };
+  const fontSizeClass = fontSizeMap[size] || "text-3xl font-semibold";
 
   return (
-    <Marquee
-      speed={speed}
-      className={`${backgroundColor} opacity-40 p-12`}
-      direction={direction}
-    >
-      {new Array(100).fill(title).map((e, index) => (
-        <h1
-          key={index}
-          className={`mr-24 ${getFontSize()} ${className}`}
-          style={{ color: textColor }}
-        >
-          {e}
-        </h1>
-      ))}
-    </Marquee>
+    <div className={`relative ${backgroundColor}`}>
+      <Marquee speed={speed} direction={direction} gradient={false}>
+        {[...Array(50)].map((_, index) => (
+          <h1
+            key={index}
+            className={`${fontSizeClass} ${className}`}
+            style={{ color: textColor }}
+          >
+            {title}
+          </h1>
+        ))}
+      </Marquee>
+    </div>
   );
 };
 
