@@ -34,11 +34,9 @@ const InfoCard: React.FC<InfoCardProps> = ({
       }}
     >
       <div
-        className={`absolute inset-0 ${
-          backgroundImage ? "bg-black/60" : ""
-        } z-0`}
+        className={`absolute inset-0 ${backgroundImage ? "bg-black/60" : ""}`}
       ></div>
-      <div className="relative z-10">
+      <div className="relative">
         <CardHeader>
           <h2 className="font-extrabold text-2xl text-foreground">{title}</h2>
         </CardHeader>

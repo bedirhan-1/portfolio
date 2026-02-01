@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="text-white h-[10vh] flex flex-col justify-center items-center">
+    <footer className="container mx-auto px-4 sm:px-6 lg:px-8 text-white h-auto min-h-[10vh] py-8 flex flex-col justify-center items-center">
       <div className="text-center">
         <p className="text-sm mb-1">
           &copy; {new Date().getFullYear()} bedirhangiden.com Tüm hakları
@@ -26,7 +26,7 @@ const Footer = () => {
             LinkedIn
           </a>
           <a
-            href="mailto:bedirhan@example.com"
+            href="mailto:bedirhangiden.info@gmail.com"
             className="hover:text-gray-400 transition duration-300"
           >
             İletişim

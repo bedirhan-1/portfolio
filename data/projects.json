@@ -1,0 +1,61 @@
+{
+    "projects": [
+        {
+            "id": "1",
+            "title": "Gallerist Spring Boot",
+            "description": "A comprehensive car dealership management system built with Spring Boot Java 17. Features include inventory management, sales tracking, and customer relationship management.",
+            "link": "https://github.com/bedirhan-1/gallerist",
+            "image": "/images/teapot.jpg",
+            "tags": [
+                "Java",
+                "Spring Boot",
+                "PostgreSQL",
+                "Docker"
+            ],
+            "featured": true,
+            "year": "2024"
+        },
+        {
+            "id": "2",
+            "title": "Offline Map Service",
+            "description": "An internship project focusing on offline map rendering and navigation. Implemented tile caching and custom routing algorithms for operation without internet access.",
+            "link": "https://github.com/bedirhan-1/offline-map",
+            "image": "/images/flamingo.jpg",
+            "tags": [
+                "TypeScript",
+                "Leaflet",
+                "PWA"
+            ],
+            "featured": false,
+            "year": "2023"
+        },
+        {
+            "id": "3",
+            "title": "Next.js Portfolio",
+            "description": "Interactive portfolio website showcasing advanced Next.js features like Server Components, Server Actions, and dynamic animations with Framer Motion.",
+            "link": "https://github.com/bedirhan-1/nextjs-project",
+            "image": "/images/cheetah.jpg",
+            "tags": [
+                "Next.js",
+                "Tailwind CSS",
+                "Framer Motion"
+            ],
+            "featured": true,
+            "year": "2024"
+        },
+        {
+            "id": "4",
+            "title": "React Native Mobile App",
+            "description": "Cross-platform mobile application developed during internship. Focuses on seamless user experience and performance optimization on both iOS and Android.",
+            "link": "https://github.com/bedirhan-1/react-native",
+            "image": "/images/woman.jpg",
+            "tags": [
+                "React Native",
+                "Redux",
+                "Mobile"
+            ],
+            "featured": false,
+            "year": "2022"
+        }
+    ]
+}

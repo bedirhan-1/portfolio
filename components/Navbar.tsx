@@ -2,16 +2,10 @@
 
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
-import { Notable } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { generateRandomColor } from "@/lib/utils";
 import ColoredText from "./ColoredText";
-
-const notable = Notable({
-  subsets: ["latin"],
-  weight: "400",
-});
 
 interface ILink {
   href: string;
@@ -73,14 +67,11 @@ const Navbar = () => {
   };
 
   return (
-    <div>
-      <div
-        className="flex w-full justify-between fixed top-0 text-[18px] mix-blend-difference z-50 backdrop-blur-3xl"
-        style={{ borderBottom: "1px solid" }}
-      >
+    <div className="sticky top-0 z-50 backdrop-blur-lg">
+      <div className="flex w-full justify-between text-lg mix-blend-difference border-b border-current">
         <Link
           href={"/"}
-          className={`px-10 my-[auto] flex cursor-pointer text-[36px] font-bold ${notable.className}`}
+          className="px-6 sm:px-10 my-auto flex cursor-pointer text-3xl sm:text-4xl font-bold font-display"
         >
           <motion.div whileHover={{ color: generateRandomColor() }}>
             BG
@@ -88,8 +79,7 @@ const Navbar = () => {
         </Link>
         <div
           onClick={toggleMenu}
-          className="px-10 py-6 mix-blend-difference cursor-pointer font-medium"
-          style={{ borderLeft: "1px solid" }}
+          className="px-6 sm:px-10 py-4 sm:py-6 mix-blend-difference cursor-pointer font-medium border-l border-current"
         >
           <ColoredText text="MENU" />
         </div>
@@ -100,22 +90,23 @@ const Navbar = () => {
         {isMenuOpen && (
           <motion.div
             ref={menuRef}
-            initial={{ y: "100%", opacity: 0 }}
-            animate={{ y: "0%", opacity: 1 }}
-            exit={{ y: "100%", opacity: 0 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="fixed bottom-0 left-0 w-full bg-black z-10 text-7xl text-white border-t"
+            initial={{ opacity: 0, scaleY: 0 }}
+            animate={{ opacity: 1, scaleY: 1 }}
+            exit={{ opacity: 0, scaleY: 0 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }} // Custom easing for premium feel
+            style={{ originY: 0 }} // Animate from top
+            className="fixed top-20 left-0 w-full h-[50vh] bg-black/95 backdrop-blur-2xl z-40 text-white flex flex-col justify-center border-b border-white/10 shadow-2xl"
           >
-            <div className="grid grid-cols-2 w-full text-center relative">
+            <div className="grid grid-cols-2 w-full h-full text-center relative divide-x divide-white/10">
               {links.map((x, i) => (
                 <div
                   key={i}
-                  className="w-full flex justify-center items-center transition-all duration-300 my-auto"
+                  className="w-full flex justify-center items-center h-full hover:bg-white/5 transition-colors duration-300 group"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <Link
                     href={x.href}
-                    className="relative border py-[10vh] border-transparent hover:border-white hover:text-white w-full text-center font-bold text-zinc-700 text-9xl"
+                    className="relative text-3xl sm:text-5xl font-bold font-display tracking-tight text-zinc-400 group-hover:text-white transition-colors duration-300"
                   >
                     {x.title}
                   </Link>
@@ -123,7 +114,7 @@ const Navbar = () => {
               ))}
               <div
                 onClick={handleSurpriseMe}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white text-black rounded-[50%] w-64 h-36 flex items-center justify-center cursor-pointer text-3xl font-bold -rotate-12 hover:bg-orange-600 hover:text-emerald-100"
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white text-black rounded-full w-32 h-20 sm:w-64 sm:h-36 flex items-center justify-center cursor-pointer text-lg sm:text-3xl font-bold -rotate-12 hover:bg-orange-600 hover:text-emerald-100"
               >
                 Surprise me!
               </div>
